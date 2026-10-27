@@ -1,0 +1,33 @@
+{% load static %}<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="data:,">
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+</head>
+<body class="article">
+    <div class="header">
+        <a class="all-posts" href="{% url 'archive' %}">Все записи</a>
+        <div class="menu menu-inline">
+            {% if user.is_authenticated %}
+                <span class="hello">{{ user.username }}</span>
+                <a href="{% url 'create_post' %}">Написать статью</a>
+                <a href="{% url 'logout' %}">Выход</a>
+            {% else %}
+                <a href="{% url 'login' %}">Вход</a>
+                <a href="{% url 'register' %}">Регистрация</a>
+            {% endif %}
+        </div>
+        <img src="{% static 'img/logo.png' %}" />
+    </div>
+    <div class="content">
+        <h1 class="post-title">{{ post.title }}</h1>
+        <div class="article-info">
+            <div class="article-author">{{ post.author.username }}</div>
+            <div class="article-created-date">{{ post.created_date }}</div>
+        </div>
+        <p class="article-text">{{ post.text|linebreaksbr }}</p>
+    </div>
+</body>
+</html>

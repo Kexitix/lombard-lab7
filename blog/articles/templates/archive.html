@@ -1,0 +1,39 @@
+{% load static %}<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="data:,">
+    <title>Архив статей</title>
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+</head>
+<body class="archive">
+    <div class="header">
+        <div class="menu">
+            {% if user.is_authenticated %}
+                <span class="hello">{{ user.username }}</span>
+                <a href="{% url 'create_post' %}">Написать статью</a>
+                <a href="{% url 'logout' %}">Выход</a>
+            {% else %}
+                <a href="{% url 'login' %}">Вход</a>
+                <a href="{% url 'register' %}">Регистрация</a>
+            {% endif %}
+        </div>
+        <img src="{% static 'img/logo.png' %}" />
+    </div>
+    <div class="archive">
+        {% for post in posts %}
+        <div class="one-post">
+        <span class="fold-button">свернуть</span>
+            <h2 class="post-title"><a href="{% url 'get_article' article_id=post.id %}">{{ post.title }}</a></h2>
+            <div class="article-info">
+                <div class="article-author">{{ post.author.username }}</div>
+                <div class="article-created-date">{{ post.created_date }}</div>
+            </div>
+            <p class="article-text">{{ post.get_excerpt }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <script src="{% static 'js/helloworld.js' %}"></script>
+    <script src="{% static 'js/fold-post.js' %}"></script>
+</body>
+</html>

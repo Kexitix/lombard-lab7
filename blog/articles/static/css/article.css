@@ -1,0 +1,253 @@
+/* общие стили страницы */
+body {
+    background: #1abc9c;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 24px 0 48px;
+    min-height: 100vh;
+}
+
+a {
+    color: #ffffff;
+}
+
+.header {
+    position: relative;
+    width: 960px;
+    min-height: 60px;
+    margin: 0 auto 30px;
+}
+
+/* логотип по центру */
+.header img {
+    display: block;
+    width: 318px;
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(0 6px 14px rgba(0, 60, 50, 0.35));
+}
+
+/* контент по центру */
+.archive, .content {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* карточка одной статьи */
+.one-post {
+    padding: 16px 28px 12px;
+    margin-bottom: 22px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-left: 6px solid #f1c40f;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 60, 50, 0.25);
+}
+
+
+.post-title {
+    font-size: 28px;
+    margin: 6px 0 10px;
+}
+
+/* ссылки-заголовки белым цветом */
+.post-title a {
+    color: #ffffff;
+}
+
+.post-title a:hover {
+    color: #fdeaa7;
+}
+
+.article-info {
+    font-size: 13px;
+    overflow: hidden;
+}
+
+/* автор и дата на одной строке */
+.article-author {
+    width: 50%;
+    float: left;
+    font-weight: bold;
+    color: #fdeaa7;
+}
+
+.article-created-date {
+    text-align: right;
+    font-style: italic;
+    color: #e8f8f5;
+}
+
+.article-text {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* ссылки в шапке в виде «таблеток» */
+.all-posts, .menu a {
+    padding: 7px 16px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+}
+
+.all-posts:hover, .menu a:hover {
+    background: #f1c40f;
+    color: #0e6655;
+}
+
+/* ---- страница одной записи (макет lab4_item) ---- */
+.article .header img {
+    margin-left: 0;
+}
+
+.all-posts {
+    position: absolute;
+    right: 0;
+    top: 16px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.article .content {
+    box-sizing: border-box;
+    padding: 20px 32px 24px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-top: 6px solid #f1c40f;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 60, 50, 0.25);
+}
+
+.article .post-title {
+    font-size: 34px;
+}
+
+/* ---- формы ---- */
+.form-page .header img {
+    margin-left: 0;
+}
+
+.form-page .content {
+    box-sizing: border-box;
+    width: 600px;
+    padding: 20px 32px 28px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 60, 50, 0.25);
+}
+
+.form-page .auth {
+    width: 420px;
+}
+
+form input[type="text"], form input[type="email"], form input[type="password"], form textarea {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 11px 14px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 15px;
+    color: #2c3e50;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #f1c40f;
+}
+
+form textarea {
+    height: 220px;
+    resize: vertical;
+}
+
+form input[type="submit"] {
+    padding: 11px 28px;
+    border: none;
+    border-radius: 24px;
+    background: #0e6655;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0, 60, 50, 0.35);
+}
+
+form input[type="submit"]:hover {
+    background: #f39c12;
+}
+
+.errors {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 6px 14px;
+    border-radius: 10px;
+    background: #ffebee;
+    color: #c62828;
+    font-weight: bold;
+}
+
+.errors:empty {
+    display: none;
+}
+
+/* ссылки меню в правом верхнем углу (как ссылка «Все записи») */
+.menu {
+    position: absolute;
+    right: 0;
+    top: 16px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.menu a {
+    margin-left: 10px;
+}
+
+.menu .hello {
+    display: block;
+    margin-bottom: 8px;
+    text-align: right;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: italic;
+    color: #fdeaa7;
+}
+
+.menu-inline {
+    right: 140px;
+}
+
+/* ---- сворачивание постов (лаб. 7) ---- */
+.one-post {
+    position: relative;
+}
+
+.fold-button {
+    position: absolute;
+    right: 24px;
+    top: 18px;
+    padding: 4px 12px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.22);
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fold-button:hover {
+    background: #f1c40f;
+    color: #0e6655;
+}
+
+.one-post.folded .article-author,
+.one-post.folded .article-created-date,
+.one-post.folded .article-text {
+    display: none;
+}
